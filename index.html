@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rojan KC — Video Editor</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="modal-bg" id="modal">
+  <div class="modal-box">
+    <button class="modal-close" id="mClose">✕</button>
+    <div id="mContent"></div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" class="logo">Rojan<span>.</span>KC</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-blob a"></div>
+  <div class="hero-blob b"></div>
+  <div class="hero-fade"></div>
+  <div class="hero-content">
+    <p class="hero-tag">Video Editor &amp; Motion Designer</p>
+    <h1 class="hero-name">
+      ROJAN
+      <span class="outline">K.C</span>
+    </h1>
+    <p class="hero-desc">
+      Crafting cinematic stories for YouTube creators, brands &amp; agencies.<br>
+      Every frame intentional. Every cut earned.
+    </p>
+    <div class="hero-btns">
+      <a href="#work" class="btn-solid">Watch My Work →</a>
+      <a href="#contact" class="btn-ghost">Hire Me</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-bar"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <div class="sec-label">About Me</div>
+    <h2 class="about-title">Telling stories<br>through <em>motion</em></h2>
+    <div class="about-body">
+      <p>I'm Rojan KC, a video editor specialising in <strong>YouTube content, documentaries, and cinematic storytelling</strong>. I work with creators and brands who care about quality — not just output.</p>
+      <p>My editing philosophy: <strong>serve the story</strong>. Pacing, rhythm, sound design, colour — every decision keeps the viewer hooked and feeling something.</p>
+      <p>Based in Nepal, working with clients <strong>worldwide</strong>. Fast turnarounds, clean communication, zero fuss.</p>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="stats">
+      <div class="stat"><div class="stat-n">5<sub>+</sub></div><div class="stat-l">Years editing</div></div>
+      <div class="stat"><div class="stat-n">110<sub>+</sub></div><div class="stat-l">Projects done</div></div>
+      <div class="stat"><div class="stat-n">30<sub>+</sub></div><div class="stat-l">Happy clients</div></div>
+      <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Coffee consumed</div></div>
+    </div>
+    <div class="avail-badge">
+      <span class="pulse-dot"></span>
+      Available for new projects
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="work-top reveal">
+    <div>
+      <div class="sec-label">Selected Work</div>
+      <h2 class="work-title">The <em>reel</em></h2>
+    </div>
+    <div class="filters">
+      <button class="fb on" data-f="all">All</button>
+      <button class="fb" data-f="youtube">Long-form</button>
+      <button class="fb" data-f="brand">Short-form</button>
+    </div>
+  </div>
+
+  <div class="vgrid" id="vgrid"></div>
+
+  <div style="margin-top:44px;text-align:center" class="reveal">
+    <a href="https://ytjobs.co/talent/profile/49706?r=2" target="_blank" class="btn-ghost">
+      View Full Portfolio on YT Jobs →
+    </a>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="sec-label reveal">Expertise</div>
+  <div class="sk-wrap reveal" id="skEl">
+    <div class="sk-col">
+      <div class="sk-head">Software</div>
+      <div class="sk-item">
+        <div class="sk-top"><span>Adobe Premiere Pro</span><span>96%</span></div>
+        <div class="sk-track"><div class="sk-fill r" data-w="96"></div></div>
+      </div>
+      <div class="sk-item">
+        <div class="sk-top"><span>After Effects</span><span>92%</span></div>
+        <div class="sk-track"><div class="sk-fill r" data-w="92"></div></div>
+      </div>
+      <div class="sk-item">
+        <div class="sk-top"><span>Audition / Sound</span><span>90%</span></div>
+        <div class="sk-track"><div class="sk-fill r" data-w="90"></div></div>
+      </div>
+      <div class="sk-item">
+        <div class="sk-top"><span>Adobe Illustrator</span><span>85%</span></div>
+        <div class="sk-track"><div class="sk-fill r" data-w="85"></div></div>
+      </div>
+      <div class="sk-item">
+        <div class="sk-top"><span>Adobe Photoshop</span><span>90%</span></div>
+        <div class="sk-track"><div class="sk-fill r" data-w="90"></div></div>
+      </div>
+    </div>
+    <div class="sk-col">
+      <div class="sk-head">Craft</div>
+      <div class="sk-item">
+        <div class="sk-top"><span>Colour Grading</span><span>90%</span></div>
+        <div class="sk-track"><div class="sk-fill g" data-w="90"></div></div>
+      </div>
+      <div class="sk-item">
+        <div class="sk-top"><span>Motion Graphics</span><span>92%</span></div>
+        <div class="sk-track"><div class="sk-fill g" data-w="78"></div></div>
+      </div>
+      <div class="sk-item">
+        <div class="sk-top"><span>YouTube Retention Editing</span><span>94%</span></div>
+        <div class="sk-track"><div class="sk-fill g" data-w="94"></div></div>
+      </div>
+      <div class="sk-item">
+        <div class="sk-top"><span>Short-form / Reels</span><span>87%</span></div>
+        <div class="sk-track"><div class="sk-fill g" data-w="87"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="c-wrap">
+    <div class="reveal">
+      <div class="sec-label">Let's Work</div>
+      <h2 class="c-title">GOT A<br><em>project?</em></h2>
+      <p class="c-desc">Open for freelance work, long-term creator partnerships, and one-off projects. I reply within 24 hours.</p>
+      <div class="c-links">
+        <a href="mailto:your@email.com" class="c-link">your@email.com <span class="c-arr">→</span></a>
+        <a href="https://www.linkedin.com/in/rojan-kc-128224247/" target="_blank" class="c-link">LinkedIn / Rojan KC <span class="c-arr">→</span></a>
+        <a href="https://ytjobs.co/talent/profile/49706?r=2" target="_blank" class="c-link">YT Jobs Portfolio <span class="c-arr">→</span></a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="cform">
+        <div><label>Your Name</label><input type="text" placeholder="Creator or Brand name"></div>
+        <div><label>Email</label><input type="email" placeholder="you@example.com"></div>
+        <div><label>Project Details</label><textarea placeholder="What do you need edited? Niche, style, deadline..."></textarea></div>
+        <button class="cform-btn" type="button">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© 2026 Rojan KC — Video Editor</span>
+  <a href="https://ytjobs.co/talent/profile/49706?r=2" target="_blank">YT Jobs Portfolio</a>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>
