@@ -170,11 +170,9 @@ section{padding:120px 48px}
 }
 .stat-n sub{font-size:.45em;color:var(--red);vertical-align:bottom;font-weight:400;margin-left:1px}
 .stat-l{font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin-top:6px}
-/* counter animation */
 .stat-num{display:inline-block}
 @keyframes countUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 .stat-num.animate{animation:countUp .5s ease forwards}
-
 .avail-badge{
   display:inline-flex;align-items:center;gap:10px;
   border:1px solid var(--border);padding:11px 18px;
@@ -187,11 +185,15 @@ section{padding:120px 48px}
 }
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 
-/* ── WORK ── */
-#work{border-top:1px solid var(--border)}
+/* ═══════════════════════════════════════
+   WORK SECTION
+═══════════════════════════════════════ */
+#work{border-top:1px solid var(--border);padding:120px 48px}
+
 .work-top{
   display:flex;align-items:flex-end;
-  justify-content:space-between;margin-bottom:48px;
+  justify-content:space-between;margin-bottom:40px;
+  flex-wrap:wrap;gap:20px;
 }
 .work-title{
   font-size:clamp(40px,5vw,68px);font-weight:900;
@@ -200,226 +202,253 @@ section{padding:120px 48px}
 .work-title em{font-style:italic;font-weight:300;color:var(--gold)}
 .filters{display:flex;gap:3px}
 .fb{
-  padding:8px 16px;
+  padding:8px 18px;
   background:transparent;border:1px solid var(--border);
   color:var(--dim);font-size:10px;letter-spacing:.1em;text-transform:uppercase;
   cursor:pointer;transition:all .2s;font-family:inherit;
 }
 .fb:hover,.fb.on{background:var(--red);border-color:var(--red);color:#fff}
 
-/* ── LONG-FORM VIDEO GRID ── */
+/* ── LONG-FORM GRID ── */
+/* 
+  Layout: editorial 3-column with deliberate big/med/sm sizing.
+  Row 1: big (col 1-2) + med (col 3)        — 2 cards
+  Row 2: med + med + med                     — 3 cards
+  Row 3: sm + sm + sm                        — 3 cards
+  Row 4: big (col 2-3) + sm (col 1)         — 2 cards
+  This gives a Pinterest-style breaking rhythm.
+*/
 .vgrid{
   display:grid;
-  grid-template-columns:repeat(12,1fr);
-  gap:3px;
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:auto;
+  gap:8px;
+  margin-bottom:0;
 }
 
-/* Card base */
+/* ── Card base ── */
 .vc{
   position:relative;overflow:hidden;cursor:pointer;
-  background:#0d0d0d;
+  background:#0d0d0d;border-radius:6px;
+  transition:transform .4s cubic-bezier(.2,0,.1,1);
 }
-.vc.big{grid-column:span 7;aspect-ratio:16/9}
-.vc.med{grid-column:span 5;aspect-ratio:16/9}
-.vc.sm {grid-column:span 4;aspect-ratio:16/9}
+.vc:hover{transform:translateY(-4px)}
+
+/* Sizing */
+.vc.big{grid-column:span 2;aspect-ratio:16/9}
+.vc.med{grid-column:span 1;aspect-ratio:16/9}
+.vc.sm {grid-column:span 1;aspect-ratio:16/9}
 
 /* Thumbnail */
 .vc-thumb{
   position:absolute;inset:0;
-  background-size:cover;background-position:center;
+  background-size:cover;background-position:center top;
   transition:transform .7s cubic-bezier(.2,0,.1,1),filter .4s;
-  filter:brightness(.75) saturate(.9);
+  filter:brightness(.72) saturate(.85);
 }
 .vc:hover .vc-thumb{
-  transform:scale(1.06);
-  filter:brightness(.55) saturate(1.1);
+  transform:scale(1.05);
+  filter:brightness(.5) saturate(1.1);
 }
 
-/* Subtle dark overlay always present */
+/* Gradient overlay — strong at bottom for legibility */
 .vc-overlay{
-  position:absolute;inset:0;
+  position:absolute;inset:0;z-index:1;
   background:linear-gradient(
-    to top,
-    rgba(0,0,0,.92) 0%,
-    rgba(0,0,0,.3) 45%,
-    rgba(0,0,0,.1) 100%
+    180deg,
+    rgba(0,0,0,.0) 0%,
+    rgba(0,0,0,.0) 35%,
+    rgba(0,0,0,.6) 65%,
+    rgba(0,0,0,.93) 100%
   );
-  z-index:1;
-  transition:background .4s;
+  transition:opacity .4s;
 }
-.vc:hover .vc-overlay{
-  background:linear-gradient(
-    to top,
-    rgba(0,0,0,.96) 0%,
-    rgba(0,0,0,.5) 50%,
-    rgba(0,0,0,.2) 100%
-  );
-}
+.vc:hover .vc-overlay{opacity:1}
 
-/* Top bar: number left, badge right */
+/* Top row: number + badge */
 .vc-top{
   position:absolute;top:0;left:0;right:0;
   display:flex;align-items:center;justify-content:space-between;
   padding:14px 16px;z-index:3;
 }
 .vc-num{
-  font-size:10px;letter-spacing:.12em;
-  color:rgba(255,255,255,.35);font-weight:500;
+  font-size:10px;letter-spacing:.14em;
+  color:rgba(255,255,255,.3);font-weight:400;
 }
 .vc-ytbadge{
   display:flex;align-items:center;gap:5px;
-  background:rgba(0,0,0,.6);
-  border:1px solid rgba(255,255,255,.08);
-  padding:4px 8px;border-radius:2px;
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.1);
+  padding:4px 9px;border-radius:3px;
   font-size:9px;letter-spacing:.1em;text-transform:uppercase;
-  color:rgba(255,255,255,.5);
-  backdrop-filter:blur(4px);
+  color:rgba(255,255,255,.55);
+  backdrop-filter:blur(6px);
 }
 
-/* Left accent line */
+/* Left accent bar — animates up on hover */
 .vc-accent{
   position:absolute;left:0;top:0;bottom:0;width:2px;
   background:var(--red);
   transform:scaleY(0);transform-origin:bottom;
-  transition:transform .4s cubic-bezier(.4,0,.2,1);
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
   z-index:3;
 }
 .vc:hover .vc-accent{transform:scaleY(1)}
 
-/* Play button */
+/* Play button — centre */
 .vc-play{
   position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%) scale(.7);
-  width:56px;height:56px;border-radius:50%;
-  background:rgba(230,57,70,.85);
+  transform:translate(-50%,-50%) scale(.65);
+  width:52px;height:52px;border-radius:50%;
+  background:rgba(230,57,70,.9);
   display:flex;align-items:center;justify-content:center;
   opacity:0;z-index:3;
-  transition:opacity .35s,transform .35s,box-shadow .35s;
-  backdrop-filter:blur(4px);
+  transition:opacity .3s,transform .3s,box-shadow .3s;
 }
 .vc:hover .vc-play{
-  opacity:1;transform:translate(-50%,-50%) scale(1);
-  box-shadow:0 0 40px rgba(230,57,70,.45);
+  opacity:1;
+  transform:translate(-50%,-50%) scale(1);
+  box-shadow:0 0 36px rgba(230,57,70,.5);
 }
 
 /* Bottom info */
 .vc-info{
   position:absolute;bottom:0;left:0;right:0;
-  padding:16px 18px 18px;
-  z-index:2;
+  padding:14px 16px 16px;z-index:2;
 }
 .vc-genre{
-  font-size:9px;letter-spacing:.22em;text-transform:uppercase;
+  font-size:9px;letter-spacing:.2em;text-transform:uppercase;
   color:var(--red);margin-bottom:5px;opacity:.9;
 }
 .vc-title{
-  font-size:15px;font-weight:700;line-height:1.25;
+  font-size:13px;font-weight:600;line-height:1.3;
   color:#fff;letter-spacing:-.01em;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
 }
-.vc.big .vc-title{font-size:20px}
+.vc.big .vc-title{font-size:17px}
 .vc.sm  .vc-title{font-size:12px}
 
-/* Duration chip */
-.vc-dur{
-  display:inline-block;
-  margin-top:8px;
-  font-size:10px;letter-spacing:.06em;
-  color:rgba(255,255,255,.4);
+/* ═══════════════════════════════════════
+   SHORT-FORM / REELS SECTION
+═══════════════════════════════════════ */
+#sfwrap{
+  margin-top:36px;
+  padding-top:32px;
+  border-top:1px solid rgba(255,255,255,.06);
 }
 
-/* ── SHORT-FORM SECTION ── */
-#sfwrap{margin-top:44px}
 .sf-label{
   font-size:10px;letter-spacing:.22em;text-transform:uppercase;
-  color:var(--dim);margin-bottom:20px;
+  color:rgba(255,255,255,.22);margin-bottom:18px;
   display:flex;align-items:center;gap:12px;
 }
-.sf-label::before{content:'';width:18px;height:1px;background:var(--dim)}
+.sf-label::before{content:'';width:18px;height:1px;background:rgba(255,255,255,.2)}
 
+/* 
+  Short-form: 5-column portrait shelf.
+  9:16 aspect ratio — looks like a proper reels row.
+*/
 .sfgrid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:3px;
+  grid-template-columns:repeat(5,1fr);
+  gap:8px;
 }
 
 /* Portrait card */
 .svc{
   position:relative;overflow:hidden;cursor:pointer;
-  aspect-ratio:9/16;background:#0d0d0d;
+  aspect-ratio:9/16;background:#0d0d0d;border-radius:6px;
+  transition:transform .4s cubic-bezier(.2,0,.1,1);
 }
+.svc:hover{transform:translateY(-4px)}
+
 .svc-video{
   position:absolute;inset:0;width:100%;height:100%;
   object-fit:cover;
   transition:transform .7s cubic-bezier(.2,0,.1,1),filter .4s;
-  filter:brightness(.8);
+  filter:brightness(.78);
 }
 .svc:hover .svc-video{
   transform:scale(1.04);
-  filter:brightness(.55);
+  filter:brightness(.5);
 }
+
 .svc-overlay{
-  position:absolute;inset:0;
+  position:absolute;inset:0;z-index:1;
   background:linear-gradient(
-    to top,
-    rgba(0,0,0,.92) 0%,
-    rgba(0,0,0,.15) 55%,
-    transparent 100%
-  );
-  z-index:1;
-  transition:background .4s;
-}
-.svc:hover .svc-overlay{
-  background:linear-gradient(
-    to top,
-    rgba(0,0,0,.96) 0%,
-    rgba(0,0,0,.4) 60%,
-    rgba(0,0,0,.1) 100%
+    180deg,
+    rgba(0,0,0,.0) 0%,
+    rgba(0,0,0,.0) 40%,
+    rgba(0,0,0,.65) 70%,
+    rgba(0,0,0,.94) 100%
   );
 }
+
+/* Top: num + badge */
 .svc-top{
   position:absolute;top:0;left:0;right:0;
   display:flex;align-items:center;justify-content:space-between;
-  padding:14px 14px;z-index:3;
+  padding:10px 12px;z-index:3;
 }
 .svc-num{
-  font-size:10px;letter-spacing:.12em;
-  color:rgba(255,255,255,.3);font-weight:500;
+  font-size:9px;letter-spacing:.12em;
+  color:rgba(255,255,255,.28);font-weight:400;
 }
 .svc-badge{
-  background:rgba(0,0,0,.6);
-  border:1px solid rgba(255,255,255,.08);
-  padding:4px 8px;
-  font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(255,255,255,.1);
+  padding:3px 7px;border-radius:3px;
+  font-size:8px;letter-spacing:.1em;text-transform:uppercase;
   color:rgba(255,255,255,.5);
-  backdrop-filter:blur(4px);
+  backdrop-filter:blur(6px);
 }
+
+/* Gold accent line for shorts */
 .svc-accent{
   position:absolute;left:0;top:0;bottom:0;width:2px;
   background:var(--gold);
   transform:scaleY(0);transform-origin:bottom;
-  transition:transform .4s cubic-bezier(.4,0,.2,1);
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
   z-index:3;
 }
 .svc:hover .svc-accent{transform:scaleY(1)}
+
+/* Play */
 .svc-play{
   position:absolute;top:50%;left:50%;
-  transform:translate(-50%,-50%) scale(.7);
-  width:48px;height:48px;border-radius:50%;
-  background:rgba(230,57,70,.85);
+  transform:translate(-50%,-50%) scale(.65);
+  width:42px;height:42px;border-radius:50%;
+  background:rgba(230,57,70,.9);
   display:flex;align-items:center;justify-content:center;
   opacity:0;z-index:3;
-  transition:opacity .35s,transform .35s,box-shadow .35s;
+  transition:opacity .3s,transform .3s,box-shadow .3s;
 }
 .svc:hover .svc-play{
-  opacity:1;transform:translate(-50%,-50%) scale(1);
-  box-shadow:0 0 32px rgba(230,57,70,.4);
+  opacity:1;
+  transform:translate(-50%,-50%) scale(1);
+  box-shadow:0 0 28px rgba(230,57,70,.45);
 }
+
+/* Bottom info */
 .svc-info{
   position:absolute;bottom:0;left:0;right:0;
-  padding:16px 14px 16px;z-index:2;
+  padding:10px 12px 13px;z-index:2;
 }
-.svc-info .vc-genre{font-size:9px}
-.svc-info .vc-title{font-size:13px;font-weight:700;line-height:1.25;color:#fff}
+.svc-info .vc-genre{
+  font-size:8px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:4px;opacity:.85;
+}
+.svc-info .vc-title{
+  font-size:11px;font-weight:600;line-height:1.3;
+  color:#fff;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
 
 /* ── SKILLS ── */
 #skills{border-top:1px solid var(--border)}
@@ -529,16 +558,27 @@ footer a:hover{text-decoration:underline}
 @keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 
 /* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .sfgrid{grid-template-columns:repeat(4,1fr)}
+}
 @media(max-width:900px){
   nav{padding:18px 22px}
   .nav-links{display:none}
   section{padding:80px 22px}
+  #work{padding:80px 22px}
   #hero{padding:0 22px 64px}
   #about,.c-wrap{grid-template-columns:1fr;gap:48px}
   .sk-wrap{grid-template-columns:1fr}
-  .vgrid{grid-template-columns:1fr}
-  .vc.big,.vc.med,.vc.sm{grid-column:span 1;aspect-ratio:16/9}
   .work-top{flex-direction:column;align-items:flex-start;gap:18px}
   footer{flex-direction:column;gap:8px;text-align:center}
-  .sfgrid{grid-template-columns:repeat(2,1fr)}
+  /* On tablet: 2-column grid, all cards equal */
+  .vgrid{grid-template-columns:1fr 1fr;gap:6px}
+  .vc.big{grid-column:span 2;aspect-ratio:16/9}
+  .vc.med,.vc.sm{grid-column:span 1;aspect-ratio:16/9}
+  .sfgrid{grid-template-columns:repeat(3,1fr);gap:6px}
+}
+@media(max-width:600px){
+  .vgrid{grid-template-columns:1fr;gap:6px}
+  .vc.big,.vc.med,.vc.sm{grid-column:span 1;aspect-ratio:16/9}
+  .sfgrid{grid-template-columns:repeat(2,1fr);gap:6px}
 }
