@@ -1,50 +1,50 @@
 /* ── LONG-FORM VIDEO DATA (YouTube) ── */
 const VIDEOS = [
-  { id:'CakIrrhc8gM', title:'Biggest Megaprojects Under Construction in 2023', genre:'Documentary',         size:'big', n:'01' },
-  { id: 'z42klR57D3M', title:'Chinese Words That Make You Fluent FAST', genre:'Talking Head Explainer', size:'big', n:'02'},
-  {id: 'MFiFKnGTkwM', title: 'We Help Thousands Build a House... Walk Through Ours Before We Sell 🥲', genre:'Vlog/Walkthrough', size:'med', n:'03'},
-  { id:'DfoMN-ToE-Q', title:'Why MrBeast Burger is McDonalds Worst Nightmare',  genre:'Business Case Study', size:'med', n:'04' },
-  { id: 'X95PoIqFiPE', title: 'Is This The Next 100x Memecoin? (SPX6900)', genre: 'Crypto Explainer', size: 'med', n: '05'},
-  { id:'4KrL7Ty8pBo', title:'The Biggest Construction Mistakes in the World',   genre:'Documentary',         size:'sm',  n:'06' },
-  { id:'Rst_ZJtH7-Y', title:'Lionel Messi | The Story of a Legend',             genre:'Biography',       size:'sm',  n:'07' },
-  { id:'YHGtQRioN40', title:'Why Were People Broken on the Wheel?',             genre:'Historic Documentary', size:'sm', n:'08' },
-  { id:'N9CDulOUk48', title:'Real Terrifying Kidnapping 911 Calls',             genre:'911 Calls',         size:'med', n:'09' },
-  { id:'c8qdYjggX8s', title:'500 mph Crash Into Audience',                      genre:'Crash Story',      size:'big', n:'10' },
-  { id: '94oS6ZLb5TE', title: 'What is WalletConnect and How to use it ? | Complete Guide 2024', genre:'Explainer Animation', size: 'med', n:'11'},
-  
+  { id:'CakIrrhc8gM', title:'Biggest Megaprojects Under Construction in 2023',              genre:'Documentary',           size:'big', n:'01' },
+  { id:'z42klR57D3M', title:'Chinese Words That Make You Fluent FAST',                       genre:'Talking Head Explainer', size:'med', n:'02' },
+  { id:'MFiFKnGTkwM', title:'We Help Thousands Build a House... Walk Through Ours',          genre:'Vlog / Walkthrough',    size:'med', n:'03' },
+  { id:'DfoMN-ToE-Q', title:'Why MrBeast Burger is McDonalds Worst Nightmare',               genre:'Business Case Study',   size:'sm',  n:'04' },
+  { id:'X95PoIqFiPE', title:'Is This The Next 100x Memecoin? (SPX6900)',                     genre:'Crypto Explainer',      size:'sm',  n:'05' },
+  { id:'4KrL7Ty8pBo', title:'The Biggest Construction Mistakes in the World',                genre:'Documentary',           size:'sm',  n:'06' },
+  { id:'Rst_ZJtH7-Y', title:'Lionel Messi | The Story of a Legend',                         genre:'Biography',             size:'big', n:'07' },
+  { id:'YHGtQRioN40', title:'Why Were People Broken on the Wheel?',                         genre:'Historic Documentary',  size:'med', n:'08' },
+  { id:'N9CDulOUk48', title:'Real Terrifying Kidnapping 911 Calls',                         genre:'911 Calls',             size:'med', n:'09' },
+  { id:'c8qdYjggX8s', title:'500 mph Crash Into Audience',                                  genre:'Crash Story',           size:'med', n:'10' },
+  { id:'94oS6ZLb5TE', title:'What is WalletConnect and How to use it? | Complete Guide',    genre:'Explainer Animation',   size:'sm',  n:'11' },
 ];
 
 /* ── SHORT-FORM VIDEO DATA (MP4) ── */
 const SHORT_VIDEOS = [
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925403/Voiceover_broll_style_v1_q74ays.mp4',          title:'UGC Edit',             genre:'Voiceover Edit', n:'S1' },
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925754/John_s_task20_v1_ywmsgn.mp4',                  title:'Brand Promo / Ad',     genre:'Brand & Commercial',  n:'S2' },
-  { url: 'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774946942/Short04_final_n45otj.mp4',                    title: 'Podcast Clip',        genre: 'Podcast Highlight', n:'S3'},
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925727/March16_POV_style_v1_qqb12g.mp4',              title:'UGC Edit',             genre:'POV Style',           n:'S4' },
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925922/Mar_25_TiktokGreenScreenStyle_v1_zexukg.mp4',  title:'UGC Edit',             genre:'TikTok Style', n:'S5' },
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952000/John_s_task12_v1_zvf6u3.mp4',                  title:'Brand Promo/Ad',       genre: 'Commercial', n:'S6' },
-  { url: 'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952651/March17_Tiktok_style_v1_n1xyht.mp4',          title: 'UGC Edit',            genre: 'Tiktok Style', n: 'S7'},
-  { url: 'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952265/Pov_style_v1_lf2xrf.mp4',                     title: 'UGC Edit',            genre: 'POV Style', n: 'S8'},
-  { url: 'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952651/March17_Tiktok_style_v1_n1xyht.mp4',          title: 'Brand Collab',        genre: 'Brand & Commercial', n:'S9'},
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925403/Voiceover_broll_style_v1_q74ays.mp4',         title:'UGC Edit',        genre:'Voiceover Edit',      n:'S1' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925754/John_s_task20_v1_ywmsgn.mp4',                 title:'Brand Promo / Ad', genre:'Brand & Commercial',  n:'S2' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774946942/Short04_final_n45otj.mp4',                    title:'Podcast Clip',     genre:'Podcast Highlight',   n:'S3' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925727/March16_POV_style_v1_qqb12g.mp4',             title:'UGC Edit',         genre:'POV Style',           n:'S4' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925922/Mar_25_TiktokGreenScreenStyle_v1_zexukg.mp4', title:'UGC Edit',         genre:'TikTok Style',        n:'S5' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952000/John_s_task12_v1_zvf6u3.mp4',                 title:'Brand Promo / Ad', genre:'Commercial',          n:'S6' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952651/March17_Tiktok_style_v1_n1xyht.mp4',          title:'UGC Edit',         genre:'TikTok Style',        n:'S7' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952265/Pov_style_v1_lf2xrf.mp4',                     title:'UGC Edit',         genre:'POV Style',           n:'S8' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952651/March17_Tiktok_style_v1_n1xyht.mp4',          title:'Brand Collab',     genre:'Brand & Commercial',  n:'S9' },
 ];
 
 /* ── REVEAL OBSERVER ── */
 const revIO = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
-    if(e.isIntersecting){
+    if (e.isIntersecting) {
       setTimeout(() => e.target.classList.add('in'), i * 60);
       revIO.unobserve(e.target);
     }
   });
 }, { threshold: 0.07 });
 
-function observeReveal(){
+function observeReveal() {
   document.querySelectorAll('.reveal:not(.in)').forEach(r => revIO.observe(r));
 }
 
 /* ── BUILD LONG-FORM CARDS ── */
 const grid = document.getElementById('vgrid');
+
 VIDEOS.forEach(v => {
-  const thumb = `https://img.youtube.com/vi/${v.id}/maxresdefault.jpg`;
+  const thumb         = `https://img.youtube.com/vi/${v.id}/maxresdefault.jpg`;
   const thumbFallback = `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
 
   const d = document.createElement('div');
@@ -73,7 +73,7 @@ VIDEOS.forEach(v => {
       <div class="vc-title">${v.title}</div>
     </div>`;
 
-  /* fallback if maxresdefault doesn't exist */
+  /* fallback thumbnail if maxresdefault doesn't exist */
   const img = new Image();
   img.src = thumb;
   img.onerror = () => {
@@ -86,6 +86,7 @@ VIDEOS.forEach(v => {
 
 /* ── BUILD SHORT-FORM CARDS ── */
 const sfGrid = document.getElementById('sfgrid');
+
 SHORT_VIDEOS.forEach(v => {
   const d = document.createElement('div');
   d.className = 'svc reveal';
@@ -114,7 +115,7 @@ SHORT_VIDEOS.forEach(v => {
   sfGrid.appendChild(d);
 });
 
-/* ── Observe all cards ── */
+/* ── Observe all newly created cards ── */
 observeReveal();
 
 /* ── MODAL — YouTube ── */
@@ -122,7 +123,7 @@ const modal  = document.getElementById('modal');
 const mCont  = document.getElementById('mContent');
 const mClose = document.getElementById('mClose');
 
-function openYTModal(id){
+function openYTModal(id) {
   modal.classList.remove('portrait');
   mCont.innerHTML = `<iframe
     src="https://www.youtube.com/embed/${id}?autoplay=1&rel=0&modestbranding=1"
@@ -135,7 +136,7 @@ function openYTModal(id){
 }
 
 /* ── MODAL — MP4 ── */
-function openVideoModal(url){
+function openVideoModal(url) {
   modal.classList.add('portrait');
   mCont.innerHTML = `<video
     src="${url}"
@@ -146,14 +147,14 @@ function openVideoModal(url){
   document.body.style.overflow = 'hidden';
 }
 
-function closeModal(){
-  modal.classList.remove('open','portrait');
+function closeModal() {
+  modal.classList.remove('open', 'portrait');
   setTimeout(() => mCont.innerHTML = '', 320);
   document.body.style.overflow = '';
 }
 mClose.addEventListener('click', closeModal);
-modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
-document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
 /* ── NAV ── */
 window.addEventListener('scroll', () =>
@@ -164,16 +165,16 @@ document.querySelectorAll('.fb').forEach(btn => {
   btn.addEventListener('click', () => {
     document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
-    const f = btn.dataset.f;
+    const f      = btn.dataset.f;
     const vgrid  = document.getElementById('vgrid');
     const sfWrap = document.getElementById('sfwrap');
-    if(f === 'all'){
+    if (f === 'all') {
       vgrid.style.display  = '';
       sfWrap.style.display = '';
-    } else if(f === 'youtube'){
+    } else if (f === 'youtube') {
       vgrid.style.display  = '';
       sfWrap.style.display = 'none';
-    } else if(f === 'brand'){
+    } else if (f === 'brand') {
       vgrid.style.display  = 'none';
       sfWrap.style.display = '';
     }
@@ -189,23 +190,22 @@ const STATS = [
 
 function animateCounter(el, target, suffix, duration = 1200) {
   const start = performance.now();
-  const update = (now) => {
-    const elapsed = now - start;
+  const update = now => {
+    const elapsed  = now - start;
     const progress = Math.min(elapsed / duration, 1);
-    /* ease out cubic */
-    const eased = 1 - Math.pow(1 - progress, 3);
-    const current = Math.round(eased * target);
+    const eased    = 1 - Math.pow(1 - progress, 3);
+    const current  = Math.round(eased * target);
     el.textContent = current + (progress === 1 ? suffix : '');
-    if(progress < 1) requestAnimationFrame(update);
+    if (progress < 1) requestAnimationFrame(update);
   };
   requestAnimationFrame(update);
 }
 
 const statsSection = document.querySelector('.stats');
-let statsAnimated = false;
+let statsAnimated  = false;
 const statsIO = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if(e.isIntersecting && !statsAnimated){
+    if (e.isIntersecting && !statsAnimated) {
       statsAnimated = true;
       STATS.forEach((s, i) => {
         setTimeout(() => animateCounter(s.el, s.target, s.suffix), i * 150);
@@ -214,13 +214,13 @@ const statsIO = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.4 });
-if(statsSection) statsIO.observe(statsSection);
+if (statsSection) statsIO.observe(statsSection);
 
 /* ── SKILL BARS ── */
 const skEl = document.getElementById('skEl');
 const skIO = new IntersectionObserver(entries => {
   entries.forEach(e => {
-    if(e.isIntersecting){
+    if (e.isIntersecting) {
       e.target.querySelectorAll('.sk-fill').forEach(bar => {
         bar.style.width = bar.dataset.w + '%';
       });
@@ -228,4 +228,4 @@ const skIO = new IntersectionObserver(entries => {
     }
   });
 }, { threshold: 0.2 });
-if(skEl) skIO.observe(skEl);
+if (skEl) skIO.observe(skEl);
