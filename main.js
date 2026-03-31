@@ -17,6 +17,20 @@ const SHORT_VIDEOS = [
   { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925922/Mar_25_TiktokGreenScreenStyle_v1_zexukg.mp4',  title:'UGC Edit',             genre:'Short-form', bg:'bg2', n:'S4' },
 ];
 
+/* ── REVEAL OBSERVER (defined first so cards can call it after building) ── */
+const revIO = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if(e.isIntersecting){
+      setTimeout(() => e.target.classList.add('in'), i * 60);
+      revIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.07 });
+
+function observeReveal(){
+  document.querySelectorAll('.reveal:not(.in)').forEach(r => revIO.observe(r));
+}
+
 /* ── BUILD LONG-FORM CARDS ── */
 const grid = document.getElementById('vgrid');
 VIDEOS.forEach(v => {
@@ -77,6 +91,9 @@ SHORT_VIDEOS.forEach(v => {
   sfGrid.appendChild(d);
 });
 
+/* ── Observe all cards now that they're in the DOM ── */
+observeReveal();
+
 /* ── MODAL — YouTube ── */
 const modal  = document.getElementById('modal');
 const mCont  = document.getElementById('mContent');
@@ -125,8 +142,8 @@ document.querySelectorAll('.fb').forEach(btn => {
     document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
     btn.classList.add('on');
     const f = btn.dataset.f;
-    const vgrid   = document.getElementById('vgrid');
-    const sfWrap  = document.getElementById('sfwrap');
+    const vgrid  = document.getElementById('vgrid');
+    const sfWrap = document.getElementById('sfwrap');
     if(f === 'all'){
       vgrid.style.display  = '';
       sfWrap.style.display = '';
@@ -139,17 +156,6 @@ document.querySelectorAll('.fb').forEach(btn => {
     }
   });
 });
-
-/* ── REVEAL ── */
-const revIO = new IntersectionObserver(entries => {
-  entries.forEach((e, i) => {
-    if(e.isIntersecting){
-      setTimeout(() => e.target.classList.add('in'), i * 60);
-      revIO.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.07 });
-document.querySelectorAll('.reveal').forEach(r => revIO.observe(r));
 
 /* ── SKILL BARS ── */
 const skEl = document.getElementById('skEl');
