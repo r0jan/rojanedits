@@ -1,20 +1,30 @@
 /* ── LONG-FORM VIDEO DATA (YouTube) ── */
 const VIDEOS = [
   { id:'CakIrrhc8gM', title:'Biggest Megaprojects Under Construction in 2023', genre:'Documentary',         size:'big', n:'01' },
-  { id:'DfoMN-ToE-Q', title:'Why MrBeast Burger is McDonalds Worst Nightmare',  genre:'Business Case Study', size:'med', n:'02' },
-  { id:'4KrL7Ty8pBo', title:'The Biggest Construction Mistakes in the World',   genre:'Documentary',         size:'sm',  n:'03' },
-  { id:'Rst_ZJtH7-Y', title:'Lionel Messi | The Story of a Legend',             genre:'Biography Doc',       size:'sm',  n:'04' },
-  { id:'YHGtQRioN40', title:'Why Were People Broken on the Wheel?',             genre:'Historic Documentary', size:'sm', n:'05' },
-  { id:'N9CDulOUk48', title:'YouTube Edit',                                     genre:'Content Edit',         size:'med', n:'06' },
-  { id:'c8qdYjggX8s', title:'Signature Work',                                   genre:'Signature Piece',      size:'big', n:'07' },
+  { id: 'z42klR57D3M', title:'Chinese Words That Make You Fluent FAST', genre:'Talking Head Explainer', size:'big', n:'02'},
+  {id: 'MFiFKnGTkwM', title: 'We Help Thousands Build a House... Walk Through Ours Before We Sell 🥲', genre:'Vlog/Walkthrough', size:'med', n:'03'},
+  { id:'DfoMN-ToE-Q', title:'Why MrBeast Burger is McDonalds Worst Nightmare',  genre:'Business Case Study', size:'med', n:'04' },
+  { id: 'X95PoIqFiPE', title: 'Is This The Next 100x Memecoin? (SPX6900)', genre: 'Crypto Explainer', size: 'med', n: '05'},
+  { id:'4KrL7Ty8pBo', title:'The Biggest Construction Mistakes in the World',   genre:'Documentary',         size:'sm',  n:'06' },
+  { id:'Rst_ZJtH7-Y', title:'Lionel Messi | The Story of a Legend',             genre:'Biography',       size:'sm',  n:'07' },
+  { id:'YHGtQRioN40', title:'Why Were People Broken on the Wheel?',             genre:'Historic Documentary', size:'sm', n:'08' },
+  { id:'N9CDulOUk48', title:'Real Terrifying Kidnapping 911 Calls',             genre:'911 Calls',         size:'med', n:'09' },
+  { id:'c8qdYjggX8s', title:'500 mph Crash Into Audience',                      genre:'Crash Story',      size:'big', n:'10' },
+  { id: '94oS6ZLb5TE', title: 'What is WalletConnect and How to use it ? | Complete Guide 2024', genre:'Explainer Animation' size: 'med', n:'11'},
+  
 ];
 
 /* ── SHORT-FORM VIDEO DATA (MP4) ── */
 const SHORT_VIDEOS = [
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925403/Voiceover_broll_style_v1_q74ays.mp4',          title:'UGC Edit',             genre:'Voiceover / B-Roll', n:'S1' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925403/Voiceover_broll_style_v1_q74ays.mp4',          title:'UGC Edit',             genre:'Voiceover Edit', n:'S1' },
   { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925754/John_s_task20_v1_ywmsgn.mp4',                  title:'Brand Promo / Ad',     genre:'Brand & Commercial',  n:'S2' },
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925727/March16_POV_style_v1_qqb12g.mp4',              title:'UGC Edit (POV Style)', genre:'POV Style',           n:'S3' },
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925922/Mar_25_TiktokGreenScreenStyle_v1_zexukg.mp4',  title:'UGC Edit',             genre:'TikTok / Green Screen', n:'S4' },
+  { url: 'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774946942/Short04_final_n45otj.mp4',                    title: 'Podcast Clip',        genre: 'Podcast Highlight', n:'S3'},
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925727/March16_POV_style_v1_qqb12g.mp4',              title:'UGC Edit',             genre:'POV Style',           n:'S4' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925922/Mar_25_TiktokGreenScreenStyle_v1_zexukg.mp4',  title:'UGC Edit',             genre:'TikTok Style', n:'S5' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952000/John_s_task12_v1_zvf6u3.mp4',                  title:'Brand Promo/Ad',       genre: 'Commercial', n:'S6' },
+  { url: 'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952651/March17_Tiktok_style_v1_n1xyht.mp4',          title: 'UGC Edit',            genre: 'Tiktok Style', n: 'S7'},
+  { url: 'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952265/Pov_style_v1_lf2xrf.mp4',                     title: 'UGC Edit',            genre: 'POV Style', n: 'S8'},
+  { url: 'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952651/March17_Tiktok_style_v1_n1xyht.mp4',          title: 'Brand Collab',        genre: 'Brand & Commercial', n:'S9'},
 ];
 
 /* ── REVEAL OBSERVER ── */
