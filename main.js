@@ -1,23 +1,23 @@
 /* ── LONG-FORM VIDEO DATA (YouTube) ── */
 const VIDEOS = [
-  { id:'CakIrrhc8gM', title:'Biggest Megaprojects Under Construction in 2023', genre:'Documentary',        cat:'youtube', size:'big', bg:'bg1', n:'01' },
-  { id:'DfoMN-ToE-Q', title:'Why MrBeast Burger is McDonalds Worst Nightmare',  genre:'Business Case Study', cat:'youtube', size:'med', bg:'bg2', n:'02' },
-  { id:'4KrL7Ty8pBo', title:'The Biggest Construction Mistakes in the World',   genre:'Documentary',        cat:'youtube', size:'sm',  bg:'bg3', n:'03' },
-  { id:'Rst_ZJtH7-Y', title:'Lionel Messi | The Story of a Legend',             genre:'Biography Documentary', cat:'youtube', size:'sm', bg:'bg4', n:'04' },
-  { id:'YHGtQRioN40', title:'Why Were People Broken on the Wheel?',             genre:'Historic Documentary', cat:'youtube', size:'sm', bg:'bg5', n:'05' },
-  { id:'N9CDulOUk48', title:'YouTube Edit',                                     genre:'Content Edit',        cat:'youtube', size:'med', bg:'bg6', n:'06' },
-  { id:'c8qdYjggX8s', title:'Signature Work',                                   genre:'Signature Piece',     cat:'youtube', size:'big', bg:'bg7', n:'07' },
+  { id:'CakIrrhc8gM', title:'Biggest Megaprojects Under Construction in 2023', genre:'Documentary',         size:'big', n:'01' },
+  { id:'DfoMN-ToE-Q', title:'Why MrBeast Burger is McDonalds Worst Nightmare',  genre:'Business Case Study', size:'med', n:'02' },
+  { id:'4KrL7Ty8pBo', title:'The Biggest Construction Mistakes in the World',   genre:'Documentary',         size:'sm',  n:'03' },
+  { id:'Rst_ZJtH7-Y', title:'Lionel Messi | The Story of a Legend',             genre:'Biography Doc',       size:'sm',  n:'04' },
+  { id:'YHGtQRioN40', title:'Why Were People Broken on the Wheel?',             genre:'Historic Documentary', size:'sm', n:'05' },
+  { id:'N9CDulOUk48', title:'YouTube Edit',                                     genre:'Content Edit',         size:'med', n:'06' },
+  { id:'c8qdYjggX8s', title:'Signature Work',                                   genre:'Signature Piece',      size:'big', n:'07' },
 ];
 
 /* ── SHORT-FORM VIDEO DATA (MP4) ── */
 const SHORT_VIDEOS = [
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925403/Voiceover_broll_style_v1_q74ays.mp4',          title:'UGC Edit',             genre:'Short-form', bg:'bg1', n:'S1' },
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925754/John_s_task20_v1_ywmsgn.mp4',                  title:'Brand Promo / Ad',     genre:'Short-form', bg:'bg3', n:'S2' },
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925727/March16_POV_style_v1_qqb12g.mp4',              title:'UGC Edit (POV Style)', genre:'Short-form', bg:'bg5', n:'S3' },
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925922/Mar_25_TiktokGreenScreenStyle_v1_zexukg.mp4',  title:'UGC Edit',             genre:'Short-form', bg:'bg2', n:'S4' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925403/Voiceover_broll_style_v1_q74ays.mp4',          title:'UGC Edit',             genre:'Voiceover / B-Roll', n:'S1' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925754/John_s_task20_v1_ywmsgn.mp4',                  title:'Brand Promo / Ad',     genre:'Brand & Commercial',  n:'S2' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925727/March16_POV_style_v1_qqb12g.mp4',              title:'UGC Edit (POV Style)', genre:'POV Style',           n:'S3' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925922/Mar_25_TiktokGreenScreenStyle_v1_zexukg.mp4',  title:'UGC Edit',             genre:'TikTok / Green Screen', n:'S4' },
 ];
 
-/* ── REVEAL OBSERVER (defined first so cards can call it after building) ── */
+/* ── REVEAL OBSERVER ── */
 const revIO = new IntersectionObserver(entries => {
   entries.forEach((e, i) => {
     if(e.isIntersecting){
@@ -34,21 +34,24 @@ function observeReveal(){
 /* ── BUILD LONG-FORM CARDS ── */
 const grid = document.getElementById('vgrid');
 VIDEOS.forEach(v => {
+  const thumb = `https://img.youtube.com/vi/${v.id}/maxresdefault.jpg`;
+  const thumbFallback = `https://img.youtube.com/vi/${v.id}/hqdefault.jpg`;
+
   const d = document.createElement('div');
   d.className = `vc ${v.size} reveal`;
-  d.dataset.cat = v.cat;
   d.innerHTML = `
-    <div class="vc-face ${v.bg}"></div>
-    <div class="vc-grain"></div>
-    <div class="vc-vign"></div>
-    <div class="vc-corner"></div>
-    <span class="vc-num">${v.n}</span>
-    <div class="vc-ytbadge">
-      <svg width="10" height="7" viewBox="0 0 24 17">
-        <path fill="#ff3333" d="M23.5 2.6S23.3.9 22.5.2C21.5-.1 20.2 0 19.5 0 16.3.1 12 .1 12 .1S7.7.1 4.5 0C3.8 0 2.5-.1 1.5.2.7.9.5 2.6.5 2.6S.3 4.6.3 6.6v1.8c0 2 .2 3.9.2 3.9s.2 1.7 1 2.4c1 1 2.4.9 3 1C7.7 16.9 12 17 12 17s3.3 0 6.5-.1c.7-.1 2-.1 3-1.2.8-.7 1-2.4 1-2.4s.2-2 .2-3.9V6.5c0-1.9-.2-3.9-.2-3.9z"/>
-        <path fill="#fff" d="M9.7 11.5V5l6.6 3.3-6.6 3.2z"/>
-      </svg>
-      YouTube
+    <div class="vc-thumb" style="background-image:url('${thumb}')"></div>
+    <div class="vc-overlay"></div>
+    <div class="vc-accent"></div>
+    <div class="vc-top">
+      <span class="vc-num">${v.n}</span>
+      <div class="vc-ytbadge">
+        <svg width="10" height="7" viewBox="0 0 24 17">
+          <path fill="#ff3333" d="M23.5 2.6S23.3.9 22.5.2C21.5-.1 20.2 0 19.5 0 16.3.1 12 .1 12 .1S7.7.1 4.5 0C3.8 0 2.5-.1 1.5.2.7.9.5 2.6.5 2.6S.3 4.6.3 6.6v1.8c0 2 .2 3.9.2 3.9s.2 1.7 1 2.4c1 1 2.4.9 3 1C7.7 16.9 12 17 12 17s3.3 0 6.5-.1c.7-.1 2-.1 3-1.2.8-.7 1-2.4 1-2.4s.2-2 .2-3.9V6.5c0-1.9-.2-3.9-.2-3.9z"/>
+          <path fill="#fff" d="M9.7 11.5V5l6.6 3.3-6.6 3.2z"/>
+        </svg>
+        YouTube
+      </div>
     </div>
     <div class="vc-play">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="#fff" style="margin-left:3px">
@@ -59,6 +62,14 @@ VIDEOS.forEach(v => {
       <div class="vc-genre">${v.genre}</div>
       <div class="vc-title">${v.title}</div>
     </div>`;
+
+  /* fallback if maxresdefault doesn't exist */
+  const img = new Image();
+  img.src = thumb;
+  img.onerror = () => {
+    d.querySelector('.vc-thumb').style.backgroundImage = `url('${thumbFallback}')`;
+  };
+
   d.addEventListener('click', () => openYTModal(v.id));
   grid.appendChild(d);
 });
@@ -70,10 +81,12 @@ SHORT_VIDEOS.forEach(v => {
   d.className = 'svc reveal';
   d.innerHTML = `
     <video class="svc-video" src="${v.url}" loop muted playsinline preload="none"></video>
-    <div class="vc-grain"></div>
-    <div class="vc-corner"></div>
-    <span class="vc-num">${v.n}</span>
-    <div class="svc-badge">Short-form</div>
+    <div class="svc-overlay"></div>
+    <div class="svc-accent"></div>
+    <div class="svc-top">
+      <span class="svc-num">${v.n}</span>
+      <div class="svc-badge">Short-form</div>
+    </div>
     <div class="svc-play">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="#fff" style="margin-left:2px">
         <polygon points="5 3 19 12 5 21 5 3"/>
@@ -91,7 +104,7 @@ SHORT_VIDEOS.forEach(v => {
   sfGrid.appendChild(d);
 });
 
-/* ── Observe all cards now that they're in the DOM ── */
+/* ── Observe all cards ── */
 observeReveal();
 
 /* ── MODAL — YouTube ── */
@@ -124,7 +137,7 @@ function openVideoModal(url){
 }
 
 function closeModal(){
-  modal.classList.remove('open', 'portrait');
+  modal.classList.remove('open','portrait');
   setTimeout(() => mCont.innerHTML = '', 320);
   document.body.style.overflow = '';
 }
@@ -156,6 +169,42 @@ document.querySelectorAll('.fb').forEach(btn => {
     }
   });
 });
+
+/* ── STAT COUNTER ANIMATION ── */
+const STATS = [
+  { el: document.getElementById('stat-years'),    target: 5,   suffix: '+' },
+  { el: document.getElementById('stat-projects'), target: 110, suffix: '+' },
+  { el: document.getElementById('stat-clients'),  target: 30,  suffix: '+' },
+];
+
+function animateCounter(el, target, suffix, duration = 1200) {
+  const start = performance.now();
+  const update = (now) => {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    /* ease out cubic */
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(eased * target);
+    el.textContent = current + (progress === 1 ? suffix : '');
+    if(progress < 1) requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+}
+
+const statsSection = document.querySelector('.stats');
+let statsAnimated = false;
+const statsIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if(e.isIntersecting && !statsAnimated){
+      statsAnimated = true;
+      STATS.forEach((s, i) => {
+        setTimeout(() => animateCounter(s.el, s.target, s.suffix), i * 150);
+      });
+      statsIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+if(statsSection) statsIO.observe(statsSection);
 
 /* ── SKILL BARS ── */
 const skEl = document.getElementById('skEl');
