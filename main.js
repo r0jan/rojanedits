@@ -10,7 +10,7 @@ const VIDEOS = [
   { id:'YHGtQRioN40', title:'Why Were People Broken on the Wheel?',             genre:'Historic Documentary', size:'sm', n:'08' },
   { id:'N9CDulOUk48', title:'Real Terrifying Kidnapping 911 Calls',             genre:'911 Calls',         size:'med', n:'09' },
   { id:'c8qdYjggX8s', title:'500 mph Crash Into Audience',                      genre:'Crash Story',      size:'big', n:'10' },
-  { id: '94oS6ZLb5TE', title: 'What is WalletConnect and How to use it ? | Complete Guide 2024', genre:'Explainer Animation' size: 'med', n:'11'},
+  { id: '94oS6ZLb5TE', title: 'What is WalletConnect and How to use it ? | Complete Guide 2024', genre:'Explainer Animation', size: 'med', n:'11'},
   
 ];
 
