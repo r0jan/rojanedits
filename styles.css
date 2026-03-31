@@ -1,8 +1,8 @@
-/* ── RESET ── */
+/* â”€â”€ RESET â”€â”€ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 
-/* ── TOKENS ── */
+/* â”€â”€ TOKENS â”€â”€ */
 :root{
   --bg:#0a0a0a;
   --s1:#111;
@@ -16,7 +16,7 @@ html{scroll-behavior:smooth}
   --border:#222;
 }
 
-/* ── BASE ── */
+/* â”€â”€ BASE â”€â”€ */
 body{
   font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
   background:var(--bg);
@@ -26,7 +26,7 @@ body{
   overflow-x:hidden;
 }
 
-/* ── NAV ── */
+/* â”€â”€ NAV â”€â”€ */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:500;
   display:flex;align-items:center;justify-content:space-between;
@@ -48,7 +48,7 @@ nav.on{background:rgba(10,10,10,.95);border-color:var(--border);}
 }
 .nav-links a:hover{color:var(--ink)}
 
-/* ── HERO ── */
+/* â”€â”€ HERO â”€â”€ */
 #hero{
   min-height:100vh;
   display:flex;flex-direction:column;justify-content:flex-end;
@@ -164,7 +164,7 @@ nav.on{background:rgba(10,10,10,.95);border-color:var(--border);}
 }
 @keyframes scrollAnim{0%,100%{opacity:.3;transform:scaleY(.8)}50%{opacity:1;transform:scaleY(1)}}
 
-/* ── SECTION COMMON ── */
+/* â”€â”€ SECTION COMMON â”€â”€ */
 section{padding:120px 48px}
 .sec-label{
   font-size:10px;letter-spacing:.25em;text-transform:uppercase;
@@ -173,7 +173,7 @@ section{padding:120px 48px}
 }
 .sec-label::before{content:'';width:24px;height:1px;background:var(--red)}
 
-/* ── ABOUT ── */
+/* â”€â”€ ABOUT â”€â”€ */
 #about{
   border-top:1px solid var(--border);
   display:grid;grid-template-columns:5fr 4fr;gap:80px;align-items:start;
@@ -217,7 +217,7 @@ section{padding:120px 48px}
 }
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
 
-/* ── WORK ── */
+/* â”€â”€ WORK â”€â”€ */
 #work{border-top:1px solid var(--border)}
 
 .work-top{
@@ -253,7 +253,7 @@ section{padding:120px 48px}
 .vc.med{grid-column:span 5;aspect-ratio:16/9}
 .vc.sm {grid-column:span 4;aspect-ratio:16/9}
 
-/* Card face — pure CSS, zero external deps */
+/* Card face â€” pure CSS, zero external deps */
 .vc-face{
   position:absolute;inset:0;
   transition:transform .6s cubic-bezier(.2,0,.1,1);
@@ -338,7 +338,7 @@ section{padding:120px 48px}
   font-size:10px;letter-spacing:.1em;color:rgba(255,255,255,.2);
 }
 
-/* ── SKILLS ── */
+/* â”€â”€ SKILLS â”€â”€ */
 #skills{border-top:1px solid var(--border)}
 .sk-wrap{
   display:grid;grid-template-columns:1fr 1fr;
@@ -368,7 +368,7 @@ section{padding:120px 48px}
   width:8px;height:8px;border-radius:50%;background:inherit;
 }
 
-/* ── CONTACT ── */
+/* â”€â”€ CONTACT â”€â”€ */
 #contact{border-top:1px solid var(--border)}
 .c-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
 .c-title{
@@ -424,7 +424,7 @@ section{padding:120px 48px}
 }
 .cform-btn:hover{box-shadow:0 0 30px rgba(230,57,70,.4);opacity:.9}
 
-/* ── FOOTER ── */
+/* â”€â”€ FOOTER â”€â”€ */
 footer{
   border-top:1px solid var(--border);
   padding:26px 48px;
@@ -434,7 +434,7 @@ footer{
 footer a{color:var(--red);text-decoration:none}
 footer a:hover{text-decoration:underline}
 
-/* ── MODAL ── */
+/* â”€â”€ MODAL â”€â”€ */
 .modal-bg{
   position:fixed;inset:0;
   background:rgba(0,0,0,.96);
@@ -455,14 +455,78 @@ footer a:hover{text-decoration:underline}
 .modal-close:hover{color:#fff}
 #mContent{width:100%;height:100%}
 
-/* ── REVEAL ── */
+/* â”€â”€ REVEAL â”€â”€ */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .75s ease,transform .75s ease}
 .reveal.in{opacity:1;transform:none}
 
-/* ── KEYFRAMES ── */
+/* â”€â”€ KEYFRAMES â”€â”€ */
 @keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
 
-/* ── RESPONSIVE ── */
+/* â”€â”€ SHORT-FORM SECTION â”€â”€ */
+#sfwrap{margin-top:40px}
+.sf-label{
+  font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--dim);margin-bottom:18px;
+  display:flex;align-items:center;gap:12px;
+}
+.sf-label::before{content:'';width:18px;height:1px;background:var(--dim)}
+
+.sfgrid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:4px;
+}
+
+/* Portrait card */
+.svc{
+  position:relative;overflow:hidden;cursor:pointer;
+  aspect-ratio:9/16;background:#0d0d0d;
+}
+.svc-video{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:cover;
+  transition:transform .6s cubic-bezier(.2,0,.1,1);
+}
+.svc:hover .svc-video{transform:scale(1.04)}
+
+.svc-badge{
+  position:absolute;top:12px;right:12px;z-index:3;
+  background:rgba(0,0,0,.7);
+  border:1px solid rgba(255,255,255,.1);
+  padding:4px 9px;
+  font-size:9px;letter-spacing:.1em;text-transform:uppercase;
+  color:rgba(255,255,255,.65);
+}
+
+.svc-play{
+  position:absolute;top:50%;left:50%;
+  transform:translate(-50%,-50%) scale(.8);
+  width:44px;height:44px;border-radius:50%;
+  background:rgba(230,57,70,.9);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;z-index:3;
+  transition:opacity .3s,transform .3s,box-shadow .3s;
+}
+.svc:hover .svc-play{
+  opacity:1;transform:translate(-50%,-50%) scale(1);
+  box-shadow:0 0 24px rgba(230,57,70,.5);
+}
+
+.svc-info{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:40px 14px 14px;
+  background:linear-gradient(to top,rgba(0,0,0,.92) 0%,transparent 100%);
+  z-index:2;
+}
+.svc-info .vc-title{font-size:13px}
+
+/* Portrait modal */
+.modal-bg.portrait .modal-box{
+  width:min(400px,94vw);
+  aspect-ratio:9/16;
+}
+
+/* â”€â”€ RESPONSIVE â”€â”€ */
 @media(max-width:900px){
   nav{padding:18px 22px}
   .nav-links{display:none}
@@ -474,4 +538,5 @@ footer a:hover{text-decoration:underline}
   .vc.big,.vc.med,.vc.sm{grid-column:span 1}
   .work-top{flex-direction:column;align-items:flex-start;gap:18px}
   footer{flex-direction:column;gap:8px;text-align:center}
+  .sfgrid{grid-template-columns:repeat(2,1fr)}
 }
