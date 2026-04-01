@@ -1,17 +1,17 @@
 /* ── LONG-FORM VIDEO DATA ── */
 /* views: real YouTube view counts formatted as strings */
 const VIDEOS = [
-  { id:'CakIrrhc8gM', title:'Biggest Megaprojects Under Construction in 2023',           genre:'Documentary',            size:'big', views:'4.2M' },
-  { id:'z42klR57D3M', title:'Chinese Words That Make You Fluent FAST',                    genre:'Talking Head Explainer', size:'med', views:'1.8M' },
-  { id:'MFiFKnGTkwM', title:'We Help Thousands Build a House... Walk Through Ours',       genre:'Vlog / Walkthrough',     size:'med', views:'3.1M' },
-  { id:'DfoMN-ToE-Q', title:'Why MrBeast Burger is McDonalds Worst Nightmare',            genre:'Business Case Study',    size:'med', views:'920K' },
-  { id:'X95PoIqFiPE', title:'Is This The Next 100x Memecoin? (SPX6900)',                  genre:'Crypto Explainer',       size:'med', views:'410K' },
-  { id:'4KrL7Ty8pBo', title:'The Biggest Construction Mistakes in the World',             genre:'Documentary',            size:'med', views:'2.6M' },
-  { id:'Rst_ZJtH7-Y', title:'Lionel Messi | The Story of a Legend',                      genre:'Biography',              size:'big', views:'5.8M' },
-  { id:'YHGtQRioN40', title:'Why Were People Broken on the Wheel?',                      genre:'Historic Documentary',   size:'med', views:'1.3M' },
-  { id:'N9CDulOUk48', title:'Real Terrifying Kidnapping 911 Calls',                      genre:'911 Calls',              size:'med', views:'780K' },
-  { id:'c8qdYjggX8s', title:'500 mph Crash Into Audience',                               genre:'Crash Story',            size:'med', views:'3.4M' },
-  { id:'94oS6ZLb5TE', title:'What is WalletConnect and How to use it? | Complete Guide', genre:'Explainer Animation',    size:'med', views:'290K' },
+  { id:'CakIrrhc8gM', title:'Biggest Megaprojects Under Construction in 2023',           genre:'Documentary',            size:'big', views:'2.4M' },
+  { id:'z42klR57D3M', title:'Chinese Words That Make You Fluent FAST',                    genre:'Talking Head Explainer', size:'med', views:'115K' },
+  { id:'MFiFKnGTkwM', title:'We Help Thousands Build a House... Walk Through Ours',       genre:'Vlog / Walkthrough',     size:'med', views:'65k' },
+  { id:'DfoMN-ToE-Q', title:'Why MrBeast Burger is McDonalds Worst Nightmare',            genre:'Business Case Study',    size:'med', views:'57K' },
+  { id:'X95PoIqFiPE', title:'Is This The Next 100x Memecoin? (SPX6900)',                  genre:'Crypto Explainer',       size:'med', views:'1.7K' },
+  { id:'4KrL7Ty8pBo', title:'The Biggest Construction Mistakes in the World',             genre:'Documentary',            size:'med', views:'3.8M' },
+  { id:'Rst_ZJtH7-Y', title:'Lionel Messi | The Story of a Legend',                      genre:'Biography',              size:'big', views:'4.1K' },
+  { id:'YHGtQRioN40', title:'Why Were People Broken on the Wheel?',                      genre:'Historic Documentary',   size:'med', views:'63K' },
+  { id:'N9CDulOUk48', title:'Real Terrifying Kidnapping 911 Calls',                      genre:'911 Calls',              size:'med', views:'60K' },
+  { id:'c8qdYjggX8s', title:'500 mph Crash Into Audience',                               genre:'Crash Story',            size:'med', views:'1.7M' },
+  { id:'94oS6ZLb5TE', title:'What is WalletConnect and How to use it? | Complete Guide', genre:'Explainer Animation',    size:'med', views:'8.5K' },
 ];
 
 /* ── SHORT-FORM VIDEO DATA ── */
