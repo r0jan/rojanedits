@@ -19,12 +19,14 @@ const SHORT_VIDEOS = [
   { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925403/Voiceover_broll_style_v1_q74ays.mp4',         title:'UGC Edit',         genre:'Voiceover Edit',     n:'S1' },
   { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925754/John_s_task20_v1_ywmsgn.mp4',                 title:'Brand Promo / Ad', genre:'Brand & Commercial', n:'S2' },
   { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774946942/Short04_final_n45otj.mp4',                    title:'Podcast Clip',     genre:'Podcast Highlight',  n:'S3' },
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925727/March16_POV_style_v1_qqb12g.mp4',             title:'UGC Edit',         genre:'POV Style',          n:'S4' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774959489/John_s_task18_v1_qkx97j.mp4',                 title:'UGC Edit',         genre:'Voiceover Edit',     n:'S4' },
   { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925922/Mar_25_TiktokGreenScreenStyle_v1_zexukg.mp4', title:'UGC Edit',         genre:'TikTok Style',       n:'S5' },
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952000/John_s_task12_v1_zvf6u3.mp4',                 title:'Brand Promo / Ad', genre:'Commercial',         n:'S6' },
-  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952651/March17_Tiktok_style_v1_n1xyht.mp4',          title:'UGC Edit',         genre:'TikTok Style',       n:'S7' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774958980/March18_Narrator_style2_v1_iiyijb.mp4',       title:'Brand Promo / Ad', genre:'Commercial',         n:'S6' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952446/March16_Tiktok_style_v1_sjasmv.mp4',          title:'UGC Edit',         genre:'TikTok Style',       n:'S7' },
   { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952265/Pov_style_v1_lf2xrf.mp4',                     title:'UGC Edit',         genre:'POV Style',          n:'S8' },
   { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774952651/March17_Tiktok_style_v1_n1xyht.mp4',          title:'Brand Collab',     genre:'Brand & Commercial', n:'S9' },
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774959342/Mar_20_Hook_style2_v1_kaojwv.mp4',            title:'UGC Edit',         genre:'Voiceover Edit',     n:'S10'},
+  { url:'https://res.cloudinary.com/dakbxfhjz/video/upload/v1774925727/March16_POV_style_v1_qqb12g.mp4',             title:'UGC Edit',         genre:'POV Style',          n:'S11' }
 ];
 
 /* ── REVEAL OBSERVER ── */
